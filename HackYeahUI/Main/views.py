@@ -13,6 +13,7 @@ def index(request):
     websiteScore = None
     articleScore = None
     url = request.POST.get('url')
+    
     if url is not None:
         articleUser = Article(url)
         url = articleUser.link
@@ -67,8 +68,6 @@ def index(request):
         #before upload data make sure the url doesnt exist in the database already
         if url not in urls:
             articleUser.uploadData()
-        else:
-            error = 'We already have this article in our database here are the results'
         
         #TO DOS
         #ADD COMMENTS
