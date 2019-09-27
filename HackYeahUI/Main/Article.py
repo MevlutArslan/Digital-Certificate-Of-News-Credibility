@@ -18,6 +18,7 @@ import random
 
 
 class Article:
+    
     #Constructor
     def __init__(self,url):
         self.link = url
@@ -229,12 +230,11 @@ class Article:
 
         self.score = contentPercentage + headLinePercentage + websiteScore + subjectivityScoreVal
 
+    def initFirebase(self):
+        self.db=firestore.client()
 
     #uploads data to firestore database
     def uploadData(self):
-        cred = credentials.Certificate('./Main/sconc-4473d-firebase-adminsdk-xqwlf-32bb728a96.json')
-        firebase_admin.initialize_app(cred)
-        self.db=firestore.client()
         doc_ref = self.db.collection(u''+self.currentWebsite['id']).document(u''+self.id)
         doc_ref.set({
             u'link':self.link,
@@ -246,6 +246,8 @@ class Article:
         self.dbArticles = []
         for doc in self.docs:
             self.dbArticles.append(doc.to_dict())
+
+   
 
     #runs all the necessary methods in order
     def run(self):

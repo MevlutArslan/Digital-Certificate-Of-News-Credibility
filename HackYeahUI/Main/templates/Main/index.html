@@ -4,7 +4,17 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     </head>
     <body>
+        <nav>
+            <h1 class='center'>CONC</h1>
+        </nav>
         <div class="center">
+            <form class='center' method="POST">
+                {% csrf_token %}
+                <input class='center' type="text" name="url" value= '{% if submitbutton == "Submit" %} {{ firstname }} {% endif %}'/>
+                <input class='center'type="Submit" name="Submit" value="Submit"/>
+            </form>
+            <h1>The results for : {{url}}</h1>
+            <br></br>
             <h1 class="center">website score is : {{websiteScore}}</h1>
             <h1 class="center">article score is : {{articleScore}}</h1>
         </div>
