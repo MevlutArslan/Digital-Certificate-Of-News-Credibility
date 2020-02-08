@@ -206,28 +206,7 @@ class Article:
         headLinePercentage = (headLinePercentage * 20) / 100
         websiteScore = (websiteScore * 30) / 100
         subjectivityScoreVal = 0 
-        #re-do the point assigning for subjectivity score
-        if subjectivityScore <= 0.05:
-            subjectivityScoreVal = 100
-        if subjectivityScore <= 0.10:
-            subjectivityScoreVal = 90
-        if subjectivityScore <= 0.15:
-            subjectivityScoreVal = 80
-        if subjectivityScore <= 0.20:
-            subjectivityScoreVal = 70
-        if subjectivityScore <= 0.25:
-            subjectivityScoreVal = 60
-        if subjectivityScore <= 0.30:
-            subjectivityScoreVal = 50
-        if subjectivityScore <= 0.35:
-            subjectivityScoreVal = 40  
-        if subjectivityScore <= 0.40:
-            subjectivityScoreVal = 30
-        if subjectivityScore <= 0.45:
-            subjectivityScoreVal = 20
-        if subjectivityScore <= 0.50:
-            subjectivityScoreVal = 10
-
+       
         self.score = contentPercentage + headLinePercentage + websiteScore + subjectivityScoreVal
 
     def initFirebase(self):
