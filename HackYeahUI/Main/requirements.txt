@@ -66,7 +66,7 @@ tqdm==4.35.0
 typed-ast==1.4.0
 Unidecode==1.1.1
 uritemplate==3.0.0
-urllib3==1.24.3
+urllib3==1.26.5
 virtualenv==16.6.2
 virtualenvwrapper-win==1.2.5
 wasabi==0.2.2
